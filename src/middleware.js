@@ -6,7 +6,7 @@ module.exports = {
   isLoggedIn: async (req, res, next) => {
     try {
       const payload = jwt.verify(
-        req.headers.authorization?.split(' ')[1],
+        req.headers.authorization.split(' ')[1],
         jwtSecret,
       );
       req.user = payload;
